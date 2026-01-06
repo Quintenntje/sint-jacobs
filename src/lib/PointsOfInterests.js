@@ -7,6 +7,7 @@ const PointsOfInterests = [
     link: "https://www.sint-jacobs.be",
     position: [0, 20, 0],
     icon: "MapPin",
+    cameraPosition: [0, 20, 0],
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const PointsOfInterests = [
     link: "https://www.sint-jacobs.be",
     position: [0, 68, 0],
     icon: "Info",
+    cameraPosition: [0, 68, 0],
   },
 ];
 

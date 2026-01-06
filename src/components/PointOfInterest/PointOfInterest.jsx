@@ -3,12 +3,17 @@ import PointsOfInterests from "../../lib/PointsOfInterests";
 import Marker from "./Marker/Marker";
 import { useActivePointOfInterestStore } from "../../store/ActivePointOfInterestStore";
 import { Html } from "@react-three/drei";
+import useCameraAnimation from "../../animation/useCameraAnimation";
 
 const PointOfInterestItem = ({ pointOfInterest }) => {
   const [isOccluded, setIsOccluded] = useState(false);
+
   const setActivePointOfInterest = useActivePointOfInterestStore(
     (state) => state.setActivePointOfInterest
   );
+
+  const animateCamera = useCameraAnimation(pointOfInterest.cameraPosition);
+
   return (
     <Html
       occlude
@@ -20,7 +25,10 @@ const PointOfInterestItem = ({ pointOfInterest }) => {
       }}
     >
       <Marker
-        onClick={() => setActivePointOfInterest(pointOfInterest)}
+        onClick={() => {
+          setActivePointOfInterest(pointOfInterest);
+          animateCamera();
+        }}
         name={pointOfInterest.icon}
       />
     </Html>
