@@ -9,9 +9,11 @@ const InfoPanel = ({ pointOfInterest, isOpen }) => {
 
   return (
     <div className={`info-panel ${isOpen ? "open" : "closed"}`}>
-      <Button className="info-panel__close" onClick={() => reset()}>
-        <X />
-      </Button>
+      <div className="info-panel__close">
+        <Button icon={true} onClick={() => reset()}>
+          <X />
+        </Button>
+      </div>
       <div className="info-panel__content">
         <h2>{pointOfInterest.name}</h2>
         <p>{pointOfInterest.description}</p>

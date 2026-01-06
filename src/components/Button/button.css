@@ -30,3 +30,9 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.button.icon {
+  min-width: 24px !important;
+  padding: var(--spacing-xs);
+  border-radius: 50%;
+}

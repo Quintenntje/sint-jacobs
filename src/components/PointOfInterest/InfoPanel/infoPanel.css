@@ -18,6 +18,11 @@
   transform: translateX(100%);
 }
 
+.info-panel__close {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .info-panel.open {
   transform: translateX(0);
 }
