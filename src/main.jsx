@@ -6,13 +6,22 @@ import { Environment } from "@react-three/drei";
 import Experience from "./components/Experience/Experience";
 import StartScreen from "./components/StartScreen/StartScreen";
 import { useTourPlayingStore } from "./store/tourPlayingStore";
+import InfoPanel from "./components/PointOfInterest/InfoPanel/InfoPanel";
+import { useActivePointOfInterestStore } from "./store/ActivePointOfInterestStore";
 
 const App = () => {
   const tourPlaying = useTourPlayingStore((state) => state.tourPlaying);
+  const activePointOfInterest = useActivePointOfInterestStore(
+    (state) => state.activePointOfInterest
+  );
 
   return (
     <>
       {!tourPlaying && <StartScreen />}
+
+      {activePointOfInterest && (
+        <InfoPanel pointOfInterest={activePointOfInterest} isOpen={true} />
+      )}
 
       <Canvas camera={{ position: [258, -21, 10] }}>
         <Environment preset="sunset" />
@@ -22,7 +31,7 @@ const App = () => {
       </Canvas>
     </>
   );
-}
+};
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

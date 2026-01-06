@@ -1,0 +1,31 @@
+.info-panel {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  top: var(--position-top);
+  right: var(--position-right);
+  background: var(--ui-surface);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  color: var(--foreground);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  max-width: 350px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(100%);
+}
+
+.info-panel.open {
+  transform: translateX(0);
+}
+
+.info-panel.closed {
+  transform: translateX(100%);
+}
+
+.info-panel.open .info-panel__content {
+  opacity: 1;
+}
