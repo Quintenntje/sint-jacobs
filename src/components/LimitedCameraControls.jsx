@@ -17,7 +17,6 @@ export default function LimitedCameraControls() {
       maxDistance={300}
       target={[0, 0, 0]}
       enableDamping={true}
-      dampingFactor={0.05}
     />
   );
 }
