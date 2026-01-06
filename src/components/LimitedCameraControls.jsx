@@ -1,10 +1,11 @@
 import { useThree, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
+import { useTourPlayingStore } from "../store/tourPlayingStore";
 
 export default function LimitedCameraControls() {
   const { camera } = useThree();
-
+  const { tourPlaying } = useTourPlayingStore();
   useFrame(() => {
     camera.position.y = THREE.MathUtils.clamp(camera.position.y, -85, 400);
   });
@@ -17,6 +18,8 @@ export default function LimitedCameraControls() {
       maxDistance={300}
       target={[0, 0, 0]}
       enableDamping={true}
+      autoRotate={!tourPlaying}
+      autoRotateSpeed={1}
     />
   );
 }

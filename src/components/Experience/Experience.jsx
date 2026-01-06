@@ -6,7 +6,7 @@ import LimitedCameraControls from "../LimitedCameraControls";
 const Experience = () => {
   return (
     <>
-      <LimitedCameraControls />
+      {<LimitedCameraControls />}
       <Center>
         <Model />
       </Center>
