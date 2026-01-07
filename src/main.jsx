@@ -19,9 +19,7 @@ const App = () => {
     <>
       {!tourPlaying && <StartScreen />}
 
-      {activePointOfInterest && (
-        <InfoPanel pointOfInterest={activePointOfInterest} isOpen={true} />
-      )}
+      <InfoPanel pointOfInterest={activePointOfInterest} />
 
       <Canvas camera={{ position: [258, -21, 10] }}>
         <Environment preset="sunset" />

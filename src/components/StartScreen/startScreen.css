@@ -26,12 +26,19 @@
 }
 
 .start-screen__content h1 {
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-3xl);
+
+  @media (min-width: 768px) {
+    font-size: var(--font-size-5xl);
+  }
 }
 
 .start-screen__content p {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   color: var(--muted-foreground);
   max-width: 600px;
 
+  @media (min-width: 768px) {
+    font-size: var(--font-size-lg);
+  }
 }
