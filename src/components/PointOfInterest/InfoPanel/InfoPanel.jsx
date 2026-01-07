@@ -3,7 +3,7 @@ import "./infoPanel.css";
 import { X } from "lucide-react";
 import Button from "../../Button/Button";
 import { useActivePointOfInterestStore } from "../../../store/ActivePointOfInterestStore";
-
+import Link from "../../Link/Link";
 const InfoPanel = ({ pointOfInterest, isOpen }) => {
   const reset = useActivePointOfInterestStore((state) => state.reset);
 
@@ -21,13 +21,9 @@ const InfoPanel = ({ pointOfInterest, isOpen }) => {
           <img src={pointOfInterest.image} alt={pointOfInterest.name} />
         )}
         {pointOfInterest.link && (
-          <a
-            href={pointOfInterest.link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {pointOfInterest.link}
-          </a>
+          <Link href={pointOfInterest.link} type="external">
+              Lees meer
+          </Link>
         )}
       </div>
     </div>

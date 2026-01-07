@@ -1,0 +1,18 @@
+.link {
+  color: var(--ui-text);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  border-bottom: 1px solid var(--ui-border);
+  transition: all 0.2s ease-in-out;
+  padding-bottom: 2px;
+}
+
+.link:hover {
+  color: var(--foreground);
+  border-bottom-color: var(--foreground);
+  text-shadow: 0 0 8px var(--shadow-soft);
+}
+
+.link:active {
+  opacity: 0.8;
+}
