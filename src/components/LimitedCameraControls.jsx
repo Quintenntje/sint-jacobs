@@ -16,7 +16,6 @@ export default function LimitedCameraControls() {
       minPolarAngle={0}
       minDistance={2}
       maxDistance={300}
-      target={[0, 0, 0]}
       enableDamping={true}
       autoRotate={!tourPlaying}
       autoRotateSpeed={1}
