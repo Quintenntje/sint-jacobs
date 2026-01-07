@@ -16,6 +16,7 @@ const PointOfInterestItem = ({ pointOfInterest }) => {
 
   return (
     <Html
+      zIndexRange={100}
       occlude
       onOcclude={setIsOccluded}
       position={pointOfInterest.position}
