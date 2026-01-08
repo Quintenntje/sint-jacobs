@@ -14,7 +14,7 @@ const StartScreen = () => {
         <h1>Sint-Jacobs kerk</h1>
         <p>Interactieve tour van de kerk van Sint-Jacobs</p>
         <Button onClick={() => startTour()} loading={progress < 100}>
-          Start met de ervaring
+          Start de ervaring
         </Button>
       </div>
     </div>
