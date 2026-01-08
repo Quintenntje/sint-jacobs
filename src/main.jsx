@@ -8,6 +8,7 @@ import StartScreen from "./components/StartScreen/StartScreen";
 import { useTourPlayingStore } from "./store/tourPlayingStore";
 import InfoPanel from "./components/PointOfInterest/InfoPanel/InfoPanel";
 import { useActivePointOfInterestStore } from "./store/ActivePointOfInterestStore";
+import CameraPositionDisplay from "./components/CameraPositionDisplay";
 
 const App = () => {
   const tourPlaying = useTourPlayingStore((state) => state.tourPlaying);
@@ -19,13 +20,16 @@ const App = () => {
     <>
       {!tourPlaying && <StartScreen />}
 
-      <InfoPanel pointOfInterest={activePointOfInterest} />
+      {activePointOfInterest && (
+        <InfoPanel pointOfInterest={activePointOfInterest} open={true} />
+      )}
 
       <Canvas camera={{ position: [258, -21, 10] }}>
         <Environment preset="sunset" />
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
         <Experience />
+
       </Canvas>
     </>
   );

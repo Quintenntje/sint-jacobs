@@ -28,9 +28,9 @@ const PointsOfInterests = [
       "Op de avond van 9 juni 1996 voltrok zich een spectaculair ongeval toen een heteluchtballon met vijf inzittenden tegen de noordelijke torenspits botste. De mand bleef op ruim 50 meter hoogte haken aan het smeedijzeren kruis, waardoor de passagiers urenlang vastzaten boven de stad. Na een zenuwslopende reddingsoperatie door de brandweer bleven alle inzittenden ongedeerd, maar de torenspits liep zware schade op die een jarenlange restauratie noodzakelijk maakte.",
     image: "/images/balloon.webp",
     link: "https://www.vrt.be/vrtnws/nl/2020/07/13/mysteries-in-oost-vlaanderen-hoe-belandde-er-in-1996-een-luchtb/",
-    position: [33.49, 24, 13],
+    position: [30, 70, 10],
     icon: "Balloon",
-    cameraPosition: [105, 41, 10],
+    cameraPosition: [60, 121, 18],
   },
   {
     id: 4,
@@ -42,6 +42,17 @@ const PointsOfInterests = [
     position: [-20, -55, 63],
     icon: "Cross",
     cameraPosition: [-18, -75, 70],
+  },
+  {
+    id: 5,
+    name: "De Achthoekige Vieringtoren",
+    description:
+      "Midden op de kruising van schip en transept rijst de achthoekige vieringtoren op, gebouwd in de 13e eeuw in de typische Scheldegotiek. De overgang van de oudere romaanse delen naar deze slankere gotische opbouw toont hoe de kerk in de loop van vier eeuwen gestaag werd verhoogd en uitgebreid, tot één imposant geheel waarin romaans, gotiek en latere stijlen naadloos in elkaar overvloeien.",
+    image: null,
+    link: null,
+    position: [44, -13, 9],
+    icon: "MapPin",
+    cameraPosition: [107, -12, 9],
   },
 ];
 
