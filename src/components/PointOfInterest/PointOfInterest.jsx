@@ -8,6 +8,10 @@ import useCameraAnimation from "../../animation/useCameraAnimation";
 const PointOfInterestItem = ({ pointOfInterest }) => {
   const [isOccluded, setIsOccluded] = useState(false);
 
+  const pointOfInterestIsActive = useActivePointOfInterestStore(
+    (state) => state.activePointOfInterest?.name === pointOfInterest.name
+  );
+
   const setActivePointOfInterest = useActivePointOfInterestStore(
     (state) => state.setActivePointOfInterest
   );
@@ -26,6 +30,7 @@ const PointOfInterestItem = ({ pointOfInterest }) => {
       }}
     >
       <Marker
+        shown={!pointOfInterestIsActive}
         onClick={() => {
           setActivePointOfInterest(pointOfInterest);
           animateCamera();

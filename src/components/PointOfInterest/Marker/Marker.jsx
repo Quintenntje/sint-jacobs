@@ -2,13 +2,13 @@ import React from "react";
 import * as icons from "lucide-react";
 import "./marker.css";
 
-const Marker = ({ name, onClick }) => {
+const Marker = ({ name, onClick, shown }) => {
   const Icon = icons[name];
 
   if (!Icon) return null;
 
   return (
-    <div className="marker" onClick={onClick}>
+    <div className={`marker ${shown ? "shown" : "hidden"}`} onClick={onClick}>
       <Icon />
     </div>
   );

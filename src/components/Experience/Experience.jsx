@@ -1,6 +1,6 @@
 import React from "react";
 import { Center } from "@react-three/drei";
-import { Model } from "../model/Curch";
+import { Model } from "../Model/Church";
 import LimitedCameraControls from "../LimitedCameraControls";
 import PointOfInterest from "../PointOfInterest/PointOfInterest";
 import { useTourPlayingStore } from "../../store/tourPlayingStore";

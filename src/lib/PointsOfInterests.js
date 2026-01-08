@@ -50,7 +50,7 @@ const PointsOfInterests = [
       "Midden op de kruising van schip en transept rijst de achthoekige vieringtoren op, gebouwd in de 13e eeuw in de typische Scheldegotiek. De overgang van de oudere romaanse delen naar deze slankere gotische opbouw toont hoe de kerk in de loop van vier eeuwen gestaag werd verhoogd en uitgebreid, tot één imposant geheel waarin romaans, gotiek en latere stijlen naadloos in elkaar overvloeien.",
     image: null,
     link: null,
-    position: [44, -13, 9],
+    position: [38, -13, 9],
     icon: "MapPin",
     cameraPosition: [107, -12, 9],
   },

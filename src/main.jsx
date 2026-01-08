@@ -8,7 +8,7 @@ import StartScreen from "./components/StartScreen/StartScreen";
 import { useTourPlayingStore } from "./store/tourPlayingStore";
 import InfoPanel from "./components/PointOfInterest/InfoPanel/InfoPanel";
 import { useActivePointOfInterestStore } from "./store/ActivePointOfInterestStore";
-import CameraPositionDisplay from "./components/CameraPositionDisplay";
+
 
 const App = () => {
   const tourPlaying = useTourPlayingStore((state) => state.tourPlaying);

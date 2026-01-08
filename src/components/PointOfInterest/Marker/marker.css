@@ -21,3 +21,9 @@
   border-color: var(--ui-border-hover);
   color: var(--foreground);
 }
+
+.marker.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
