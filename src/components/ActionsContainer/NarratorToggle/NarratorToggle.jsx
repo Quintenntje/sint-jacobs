@@ -1,4 +1,4 @@
-import "./NarratorToggle.css";
+import "./narratorToggle.css";
 import { Volume2Icon, VolumeXIcon } from "lucide-react";
 import { useNarratorStore } from "../../../store/narratorStore";
 
