@@ -4,6 +4,7 @@ import { Model } from "../Model/Church";
 import LimitedCameraControls from "../LimitedCameraControls";
 import PointOfInterest from "../PointOfInterest/PointOfInterest";
 import { useTourPlayingStore } from "../../store/tourPlayingStore";
+import Floor from "../Model/Floor";
 
 const Experience = () => {
   const tourPlaying = useTourPlayingStore((state) => state.tourPlaying);
@@ -13,6 +14,9 @@ const Experience = () => {
       <Center>
         <Model />
       </Center>
+
+      <Floor />
+
       {tourPlaying && <PointOfInterest />}
     </>
   );
