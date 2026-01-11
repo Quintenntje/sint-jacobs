@@ -3,11 +3,15 @@ export const useTextToSpeech = () => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
 
     const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "nl-NL";
 
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utterance);
-    utterance.lang = "nl-NL";
   };
 
-  return { speak };
+  const stopSpeaking = () => {
+    window.speechSynthesis.cancel();
+  };
+
+  return { speak, stopSpeaking };
 };

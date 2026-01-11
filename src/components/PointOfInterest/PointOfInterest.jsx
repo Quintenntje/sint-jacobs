@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import PointsOfInterests from "../../lib/PointsOfInterests";
 import Marker from "./Marker/Marker";
 import { useActivePointOfInterestStore } from "../../store/activePointOfInterestStore";
@@ -19,9 +19,17 @@ const PointOfInterestItem = ({ pointOfInterest }) => {
   );
 
   const { isNarrator } = useNarratorStore();
-  const { speak } = useTextToSpeech();
+  const { speak, stopSpeaking } = useTextToSpeech();
 
   const animateCamera = useCameraAnimation(pointOfInterest.cameraPosition);
+
+  useEffect(() => {
+    if (isNarrator && pointOfInterestIsActive) {
+      speak(pointOfInterest.description);
+    } else {
+      stopSpeaking();
+    }
+  }, [isNarrator, pointOfInterestIsActive, pointOfInterest.description]);
 
   return (
     <Html
@@ -42,7 +50,6 @@ const PointOfInterestItem = ({ pointOfInterest }) => {
         }}
         name={pointOfInterest.icon}
       />
-      {isNarrator && speak(pointOfInterest.description)}
     </Html>
   );
 };
