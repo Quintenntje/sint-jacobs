@@ -2,13 +2,13 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./css/index.css";
 import { Canvas } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
 import Experience from "./components/Experience/Experience";
 import StartScreen from "./components/StartScreen/StartScreen";
 import { useTourPlayingStore } from "./store/tourPlayingStore";
 import InfoPanel from "./components/PointOfInterest/InfoPanel/InfoPanel";
 import { useActivePointOfInterestStore } from "./store/ActivePointOfInterestStore";
-
+import DayNightSwitcher from "./components/DayNightSwitcher/DayNightSwitcher";
+import SceneLighting from "./components/SceneLighting";
 
 const App = () => {
   const tourPlaying = useTourPlayingStore((state) => state.tourPlaying);
@@ -18,6 +18,8 @@ const App = () => {
 
   return (
     <>
+      <DayNightSwitcher />
+
       {!tourPlaying && <StartScreen />}
 
       {activePointOfInterest && (
@@ -25,11 +27,8 @@ const App = () => {
       )}
 
       <Canvas camera={{ position: [258, -21, 10] }}>
-        <Environment preset="sunset" />
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} />
+        <SceneLighting />
         <Experience />
-
       </Canvas>
     </>
   );
