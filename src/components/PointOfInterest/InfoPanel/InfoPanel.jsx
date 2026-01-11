@@ -2,7 +2,7 @@ import React from "react";
 import "./infoPanel.css";
 import { X } from "lucide-react";
 import Button from "../../Button/Button";
-import { useActivePointOfInterestStore } from "../../../store/ActivePointOfInterestStore";
+import { useActivePointOfInterestStore } from "../../../store/activePointOfInterestStore";
 import Link from "../../Link/Link";
 
 const InfoPanel = ({ pointOfInterest, open = false }) => {

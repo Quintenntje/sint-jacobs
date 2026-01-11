@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import PointsOfInterests from "../../lib/PointsOfInterests";
 import Marker from "./Marker/Marker";
-import { useActivePointOfInterestStore } from "../../store/ActivePointOfInterestStore";
+import { useActivePointOfInterestStore } from "../../store/activePointOfInterestStore";
 import { Html } from "@react-three/drei";
 import useCameraAnimation from "../../animation/useCameraAnimation";
+import { useNarratorStore } from "../../store/narratorStore";
+import { useTextToSpeech } from "../../hooks/useTextToSpeech";
 
 const PointOfInterestItem = ({ pointOfInterest }) => {
   const [isOccluded, setIsOccluded] = useState(false);
@@ -15,6 +17,9 @@ const PointOfInterestItem = ({ pointOfInterest }) => {
   const setActivePointOfInterest = useActivePointOfInterestStore(
     (state) => state.setActivePointOfInterest
   );
+
+  const { isNarrator } = useNarratorStore();
+  const { speak } = useTextToSpeech();
 
   const animateCamera = useCameraAnimation(pointOfInterest.cameraPosition);
 
@@ -37,6 +42,7 @@ const PointOfInterestItem = ({ pointOfInterest }) => {
         }}
         name={pointOfInterest.icon}
       />
+      {isNarrator && speak(pointOfInterest.description)}
     </Html>
   );
 };

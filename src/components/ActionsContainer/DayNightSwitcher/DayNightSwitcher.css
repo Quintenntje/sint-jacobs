@@ -1,8 +1,4 @@
 .day-night-switcher {
-  position: fixed;
-  bottom: var(--spacing-lg);
-  right: var(--spacing-lg);
-  z-index: 10;
   display: flex;
   gap: var(--spacing-2xs);
   border: 1px solid var(--ui-border);

@@ -6,8 +6,8 @@ import Experience from "./components/Experience/Experience";
 import StartScreen from "./components/StartScreen/StartScreen";
 import { useTourPlayingStore } from "./store/tourPlayingStore";
 import InfoPanel from "./components/PointOfInterest/InfoPanel/InfoPanel";
-import { useActivePointOfInterestStore } from "./store/ActivePointOfInterestStore";
-import DayNightSwitcher from "./components/DayNightSwitcher/DayNightSwitcher";
+import { useActivePointOfInterestStore } from "./store/activePointOfInterestStore";
+import ActionsContainer from "./components/ActionsContainer/ActionsContainer";
 import SceneLighting from "./components/SceneLighting";
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <>
-      <DayNightSwitcher />
+      <ActionsContainer />
 
       {!tourPlaying && <StartScreen />}
 

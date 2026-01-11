@@ -2,7 +2,7 @@ import "./DayNightSwitcher.css";
 import { useRef, useEffect } from "react";
 import { SunIcon, MoonIcon } from "lucide-react";
 
-import { useDayNightStore } from "../../store/dayNightStore";
+import { useDayNightStore } from "../../../store/dayNightStore";
 
 const DayNightSwitcher = () => {
   const { isNight, setIsNight, setIsDay } = useDayNightStore();
