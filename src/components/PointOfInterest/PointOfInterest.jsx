@@ -6,6 +6,7 @@ import { Html } from "@react-three/drei";
 import useCameraAnimation from "../../animation/useCameraAnimation";
 import { useNarratorStore } from "../../store/narratorStore";
 import { useTextToSpeech } from "../../hooks/useTextToSpeech";
+import { cameraDefaultPosition } from "../../lib/cameraPositions";
 
 const PointOfInterestItem = ({ pointOfInterest }) => {
   const [isOccluded, setIsOccluded] = useState(false);
@@ -21,7 +22,13 @@ const PointOfInterestItem = ({ pointOfInterest }) => {
   const { isNarrator } = useNarratorStore();
   const { speak, stopSpeaking } = useTextToSpeech();
 
-  const animateCamera = useCameraAnimation(pointOfInterest.cameraPosition);
+  const animateCameraToDefaultPosition = useCameraAnimation(
+    cameraDefaultPosition
+  );
+
+  const animateCameraToPointOfInterestPosition = useCameraAnimation(
+    pointOfInterest.cameraPosition
+  );
 
   useEffect(() => {
     if (isNarrator && pointOfInterestIsActive) {
@@ -30,6 +37,12 @@ const PointOfInterestItem = ({ pointOfInterest }) => {
       stopSpeaking();
     }
   }, [isNarrator, pointOfInterestIsActive, pointOfInterest.description]);
+
+  useEffect(() => {
+    if (!pointOfInterestIsActive) {
+      animateCameraToDefaultPosition();
+    }
+  }, [pointOfInterestIsActive, animateCameraToDefaultPosition]);
 
   return (
     <Html
@@ -46,7 +59,9 @@ const PointOfInterestItem = ({ pointOfInterest }) => {
         shown={!pointOfInterestIsActive}
         onClick={() => {
           setActivePointOfInterest(pointOfInterest);
-          animateCamera();
+          animateCameraToPointOfInterestPosition(
+            pointOfInterest.cameraPosition
+          );
         }}
         name={pointOfInterest.icon}
       />

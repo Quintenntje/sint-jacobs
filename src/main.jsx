@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import "./css/index.css";
 import { Canvas } from "@react-three/fiber";
@@ -9,6 +9,7 @@ import InfoPanel from "./components/PointOfInterest/InfoPanel/InfoPanel";
 import { useActivePointOfInterestStore } from "./store/activePointOfInterestStore";
 import ActionsContainer from "./components/ActionsContainer/ActionsContainer";
 import SceneLighting from "./components/SceneLighting";
+import { cameraStartPosition } from "./lib/cameraPositions";
 
 const App = () => {
   const tourPlaying = useTourPlayingStore((state) => state.tourPlaying);
@@ -19,14 +20,12 @@ const App = () => {
   return (
     <>
       <ActionsContainer />
-
       {!tourPlaying && <StartScreen />}
-
       {activePointOfInterest && (
         <InfoPanel pointOfInterest={activePointOfInterest} open={true} />
       )}
 
-      <Canvas camera={{ position: [258, -21, 10] }}>
+      <Canvas camera={{ position: cameraStartPosition }}>
         <SceneLighting />
         <Experience />
       </Canvas>
