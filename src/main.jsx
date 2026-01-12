@@ -10,6 +10,7 @@ import { useActivePointOfInterestStore } from "./store/activePointOfInterestStor
 import ActionsContainer from "./components/ActionsContainer/ActionsContainer";
 import SceneLighting from "./components/SceneLighting";
 import { cameraStartPosition } from "./lib/cameraPositions";
+import AppHint from "./components/AppHint/AppHint";
 
 const App = () => {
   const tourPlaying = useTourPlayingStore((state) => state.tourPlaying);
@@ -24,6 +25,8 @@ const App = () => {
       {activePointOfInterest && (
         <InfoPanel pointOfInterest={activePointOfInterest} open={true} />
       )}
+
+      {tourPlaying && <AppHint />}
 
       <Canvas camera={{ position: cameraStartPosition }}>
         <SceneLighting />
