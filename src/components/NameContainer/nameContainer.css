@@ -7,7 +7,7 @@
 }
 
 .name-container__title {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
   color: var(--foreground);
 
@@ -17,7 +17,7 @@
 }
 
 .name-container__subtitle {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-medium);
   color: var(--foreground);
 
