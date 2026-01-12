@@ -41,7 +41,7 @@ const SceneLighting = () => {
           depth={60}
           count={5000}
           factor={4}
-          saturation={1}
+          saturation={0}
           fade={false}
           speed={0}
         />
