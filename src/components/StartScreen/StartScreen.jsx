@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./startScreen.css";
 import Button from "../Button/Button";
 import { useTourPlayingStore } from "../../store/tourPlayingStore";
@@ -7,13 +7,22 @@ import { useProgress } from "@react-three/drei";
 const StartScreen = () => {
   const startTour = useTourPlayingStore((state) => state.startTour);
   const { progress } = useProgress();
+  const [progressPercentage, setProgressPercentage] = useState(progress);
+
+  useEffect(() => {
+    setProgressPercentage(progress);
+  }, [progress]);
 
   return (
     <div className="start-screen">
       <div className="start-screen__content">
         <h1>Sint-Jacobs kerk</h1>
         <p>Interactieve tour van de kerk van Sint-Jacobs</p>
-        <Button onClick={() => startTour()} loading={progress < 100}>
+        <Button
+          onClick={() => startTour()}
+          loading={progress < 100}
+          progress={progressPercentage}
+        >
           Start de ervaring
         </Button>
       </div>
