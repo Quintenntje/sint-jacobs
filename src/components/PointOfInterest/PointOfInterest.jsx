@@ -30,6 +30,10 @@ const PointOfInterestItem = ({ pointOfInterest }) => {
     pointOfInterest.cameraPosition
   );
 
+  const activePoint = useActivePointOfInterestStore(
+    (state) => state.activePointOfInterest
+  );
+
   useEffect(() => {
     if (isNarrator && pointOfInterestIsActive) {
       speak(pointOfInterest.description);
@@ -39,10 +43,15 @@ const PointOfInterestItem = ({ pointOfInterest }) => {
   }, [isNarrator, pointOfInterestIsActive, pointOfInterest.description]);
 
   useEffect(() => {
-    if (!pointOfInterestIsActive) {
+    if (!pointOfInterest.name || activePoint === null) {
       animateCameraToDefaultPosition();
     }
-  }, [pointOfInterestIsActive, animateCameraToDefaultPosition]);
+  }, [
+    pointOfInterestIsActive,
+    animateCameraToDefaultPosition,
+    pointOfInterest.name,
+    activePoint,
+  ]);
 
   return (
     <Html
