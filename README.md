@@ -1,6 +1,7 @@
 # ⛪ Sint-Jacobskerk Interactive 3D Tour
 
 **Live Demo: [sint-jacobs.vercel.app](https://sint-jacobs.vercel.app/)**
+**GitHub Repository: [github.com/Quintenntje/sint-jacobs](https://github.com/Quintenntje/sint-jacobs)**
 
 An immersive, interactive 3D experience of the historic **Sint-Jacobskerk** (Saint James' Church) in Ghent, Belgium. This project allows users to explore the church's unique architecture and history through a browser-based 3D environment.
 
